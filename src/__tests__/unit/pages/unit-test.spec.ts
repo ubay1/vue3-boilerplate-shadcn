@@ -15,7 +15,7 @@ describe('Unit Test Page', () => {
   it('mounts render & get title', () => {
     const wrapper = mount(UnitTestPage)
     const getText = wrapper.get('[data-test="title"]')
-    expect(getText.text()).toBe('Unit Test With Vitest')
+    expect(getText.text()).toBe('Unit Test With Vitest + Vue Test Utils')
   })
 
   it('mount render todo', () => {
