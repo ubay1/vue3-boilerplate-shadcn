@@ -37,6 +37,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/ms-playwright  # cache browser Playwright
+          key: ${{ runner.os }}-deps-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-deps-
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -50,7 +60,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npm run test:e2e
 
       # (Opsional) Upload report
       - name: Upload Playwright Report
