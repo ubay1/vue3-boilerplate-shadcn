@@ -47,5 +47,4 @@ export default defineConfigWithVueTs(
       globals: autoImportConfig.globals,
     },
   },
-
 )

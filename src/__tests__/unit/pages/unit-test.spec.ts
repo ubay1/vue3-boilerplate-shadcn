@@ -1,4 +1,3 @@
-
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
@@ -19,13 +18,13 @@ describe('Unit Test Page', () => {
     expect(getText.text()).toBe('Unit Test With Vitest')
   })
 
-  it("mount render todo", () => {
+  it('mount render todo', () => {
     const wrapper = mount(UnitTestPage)
     const getAllTodo = wrapper.get('[data-test="todo-list"]')
     expect(getAllTodo.text()).toBe('No todos yet')
   })
 
-  it("create todo", async () => {
+  it('create todo', async () => {
     const wrapper = mount(UnitTestPage)
     const findAllTodo = wrapper.findAll('[data-test="todo-list"]')
     await wrapper.get('[data-test="input-todo"]').setValue('New todo')
@@ -33,13 +32,11 @@ describe('Unit Test Page', () => {
     expect(findAllTodo).toHaveLength(1)
   })
 
-  it("complete todo", async () => {
+  it('complete todo', async () => {
     const wrapper = mount(UnitTestPage, {
       props: {
-        initialTodos: [
-          { id: 1, text: "Belajar Vitest", completed: false }
-        ]
-      }
+        initialTodos: [{ id: 1, text: 'Belajar Vitest', completed: false }],
+      },
     })
 
     // for input checkbox

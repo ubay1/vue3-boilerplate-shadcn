@@ -4,12 +4,12 @@ import { test, expect } from '@playwright/test'
 // https://playwright.dev/docs/intro
 test('check title page', async ({ page }) => {
   await page.goto('/')
-  await expect(page).toHaveTitle("Vue Boilerplate")
+  await expect(page).toHaveTitle('Vue Boilerplate')
 })
 
 test('check error message', async ({ page }) => {
   await page.goto('/')
-  await page.getByTestId('home-example-form-input').fill("")
+  await page.getByTestId('home-example-form-input').fill('')
   await page.getByTestId('home-example-btn-submit').click()
-  await expect(page.getByTestId("home-example-error-msg")).toContainText("Username wajib diisi");
+  await expect(page.getByTestId('home-example-error-msg')).toContainText('Username wajib diisi')
 })

@@ -1,6 +1,6 @@
 # vue3-boilerplate
 
-> Vue 3, Typescript, Eslint, Prettier, Pinia, Vue Router, Vitest + Vue Test Utils, Playwright
+> Vue 3, Typescript, Eslint, Prettier, Pinia, Vue Router, Vitest + Vue Test Utils, Playwright, Github Actions
 
 ---
 
