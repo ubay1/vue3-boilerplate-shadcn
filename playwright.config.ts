@@ -54,7 +54,7 @@ export default defineConfig({
   webServer: {
     command: process.env.CI ? 'npm run preview' : 'npm run dev',
     port: process.env.CI ? 4173 : 5173,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: process.env.CI ? false : true,
     timeout: 120 * 1000, // kasih waktu 1 menit server start di CI
   },
 })

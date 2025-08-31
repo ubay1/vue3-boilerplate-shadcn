@@ -59,6 +59,17 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Build app
+        run: npm run build
+
+      # 🔑 Start preview server (Vite pakai preview)
+      - name: Start server
+        run: npm run preview -- --port 4173 &
+
+      # Tunggu server ready (biar nggak langsung blank page)
+      - name: Wait for server
+        run: npx wait-on http://localhost:4173
+
       - name: Run Playwright tests
         run: npm run test:e2e
 
